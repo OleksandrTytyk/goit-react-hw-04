@@ -66,6 +66,7 @@ function App() {
       setshowLoadMoreBtn(false);
 
       setPhotos([]);
+      setPage(1);
     }
 
     setSearchQuery(query);
@@ -83,7 +84,8 @@ function App() {
       {selectedPhoto && (
         <ImageModal
           isOpen={modalIsOpen}
-          photo={selectedPhoto}
+          src={selectedPhoto.urls.regular}
+          alt={selectedPhoto.alt_description}
           closeModal={closeModal}
         />
       )}

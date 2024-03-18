@@ -3,7 +3,7 @@ import css from "./ImageModal.module.css";
 
 Modal.setAppElement(document.getElementById("root"));
 
-const ImageModal = ({ isOpen, photo, closeModal }) => {
+const ImageModal = ({ isOpen, closeModal, src, alt }) => {
   const customStyles = {
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.85)",
@@ -33,12 +33,8 @@ const ImageModal = ({ isOpen, photo, closeModal }) => {
       preventScroll={true}
       style={customStyles}
     >
-      <img
-        className={css.imgModal}
-        src={photo.urls.regular}
-        alt={photo.alt_description}
-      />
-      <p>{photo.alt_description}</p>
+      <img className={css.imgModal} src={src} alt={alt} />
+      <p>{alt}</p>
       <button onClick={closeModal}>Close</button>
     </Modal>
   );
